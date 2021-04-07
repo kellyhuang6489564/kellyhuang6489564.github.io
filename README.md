@@ -1,5 +1,4 @@
 # kellyhuang6489564.github.io
-我的第一個網站!!!
 =====
 Week03-1 茶壺
 ------
