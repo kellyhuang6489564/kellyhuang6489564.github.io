@@ -3,6 +3,7 @@
 =====
 Week03-1
 ------
+```
 #include <GL/glut.h>
 void display()
 {
@@ -19,4 +20,5 @@ int main(int argc,char **argv)  /// 以前是int main()
     glutDisplayFunc(display);   ///4.等一下要顯示的函式
     glutMainLoop();  ///5.主要迴圈
 }
+```
 ------
