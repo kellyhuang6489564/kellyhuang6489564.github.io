@@ -3,7 +3,7 @@
 =====
 Week03-1
 ------
-```
+```C
 #include <GL/glut.h>
 void display()
 {
