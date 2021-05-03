@@ -58,7 +58,7 @@ int main(int argc,char **argv)
 -----
 Week05 畫封閉線
 -----
-```
+```C
 #include <GL/glut.h>
 void display()
 {
