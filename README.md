@@ -627,11 +627,11 @@ int main(int argc, char** argv)
     glEnable(GL_DEPTH_TEST);
     glutMainLoop();
 }
-`
+```
 -----
 Week14 Timer
 -----
-`C
+```C
 #include <GL/glut.h>
 void display()
 {
@@ -658,9 +658,5 @@ int main(int argc,char **argv)
     glutMainLoop();
 
 }
-`
------
-Week15
+```
 ------
-
-
