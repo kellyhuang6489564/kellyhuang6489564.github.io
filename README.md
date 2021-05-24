@@ -629,3 +629,35 @@ int main(int argc, char** argv)
 }
 `
 -----
+Week14 Timer
+-----
+`C
+#include <GL/glut.h>
+void display()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glutSolidSphere(0.3,30,30);///實心的圓球
+            ///半徑 縱切 橫片切
+    glutSwapBuffers();
+}
+void timer(int t)
+{
+    glClearColor(1,0,0,0);///清除背景顏色紅色
+    display();
+
+}
+int main(int argc,char **argv)
+{
+    glutInit(&argc,argv);
+    glutInitDisplayMode(GLUT_DOUBLE |GLUT_DEPTH);
+    glutCreateWindow("Week14 timer");
+
+    glutDisplayFunc(display);
+    glutTimerFunc(4000  ,  timer  ,0);
+                ///要等多久 叫誰 參數
+    glutMainLoop();
+
+}
+`
+-----
+
