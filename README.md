@@ -983,14 +983,22 @@ void mouse(int button,int state,int x,int y)
     oldX = x;
     oldY = y;
 }
+#include <stdio.h> ///才能用 fopen
+FILE * fout =NULL;
+FILE * fin =NULL;
 void motion(int x,int y)
 {
     angle[angleID] += x - oldX;
     oldX = x;
     glutPostRedisplay();
+
+    if( fout == NULL) fout=fopen("angle.txt","w+");
+    for(int i=0;i<20;i++)printf("%.2f ",angle[i]);
+    printf("\n");
+    for(int i=0;i<20;i++)fprintf(fout,"%.2f",angle[i]);
+    fprintf(fout,"\n");
 }
-#include <stdio.h> ///才能用 fopen
-FILE * fout =NULL;
+
 void keyboard(unsigned char key,int x,int y){
     if(key=='0') angleID=0; ///之後timer會改變關節 angle[0]
     if(key=='1') angleID=1;
@@ -1002,6 +1010,11 @@ void keyboard(unsigned char key,int x,int y){
         printf("\n");
         for(int i=0;i<20;i++)fprintf(fout,"%.2f",angle[i]);
         fprintf(fout,"\n");
+    } ///必須把程式關閉，才會更新angle.txt
+    if(key=='r'){
+        if(fin == NULL) fin=fopen("angle.txt","r");
+        for(int i=0;i<20;i++)fscanf(fin,"%f",&angle[i]);
+        glutPostRedisplay();
     }
 }
 void display()
